@@ -1,0 +1,17 @@
+<%= devise_error_messages! %>
+
+<h3 class="text-center form-title">Forgot your password?</h3>
+<hr>
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: "card-block"}) do |f| %>
+  <div class="form-group">
+    <%= f.label :email, class: "form-control-label" %>
+    <%= f.email_field :email, autofocus: true, class: "form-control input-lg" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit "Send me reset password instructions", class: "btn btn-action btn-lg btn-block" %>
+  </div>
+<% end %>
+
+<div class="auth-links text-center">
+</div>
