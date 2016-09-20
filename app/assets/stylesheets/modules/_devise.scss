@@ -1,0 +1,26 @@
+// - - - - - - - - - - - - - - - - - - -
+// - - devise module
+// styles for the devise module
+body.devise {
+  background-color: $color-darker-cyan;
+  .logo {
+    margin: 3em 0;
+  }
+
+  .form-control-label {
+    color: white;
+  }
+
+  .form-title {
+    color: white;
+  }
+
+  .auth-links {
+    font-size: 14px;
+    color: white;
+
+    a {
+      color: $color-geraldine;
+    }
+  }
+}

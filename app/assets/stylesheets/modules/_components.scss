@@ -1,0 +1,11 @@
+// - - - - - - - - - - - - - - - - - - -
+// - - components module
+// styles for the components module
+
+// - Custom button
+// Danger and error appear as red
+.btn-action {
+  @include button-variant(white, $color-geraldine, $btn-danger-border);
+  box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.20);
+  border-radius: 7px;
+}

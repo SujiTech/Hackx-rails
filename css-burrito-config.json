@@ -8,7 +8,10 @@
     "modules": {
       "modulesDirectory": "modules",
       "modulesImportFile": "_modules.scss",
-      "moduleFiles": []
+      "moduleFiles": [
+        "_components.scss",
+        "_devise.scss"
+      ]
     }
   },
   "template": {
