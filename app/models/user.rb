@@ -34,11 +34,14 @@
 #
 
 class User < ApplicationRecord
+  include OmniauthCallbacks
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable,
-         :authentication_keys => [:login]
+         :omniauthable, :authentication_keys => [:login]
+
+  has_many :authorizations, dependent: :delete_all
 
   attr_accessor :login
   validate :validate_username
@@ -49,6 +52,15 @@ class User < ApplicationRecord
     end
   end
 
+  def bind?(provider)
+    authorizations.collect(&:provider).include?(provider)
+  end
+
+  def bind_service(response)
+    provider = response['provider']
+    uid = response['uid'].to_s
+    authorizations.create(provider: provider, uid: uid)
+  end
 
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup

@@ -10,7 +10,8 @@
       "modulesImportFile": "_modules.scss",
       "moduleFiles": [
         "_components.scss",
-        "_devise.scss"
+        "_devise.scss",
+        "_social_signin_buttons.scss"
       ]
     }
   },
