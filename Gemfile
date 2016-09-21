@@ -1,3 +1,4 @@
+# source 'https://rubygems.org'
 source 'https://gems.ruby-china.org/'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -25,9 +26,6 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
 
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'font-awesome-sass', '~> 4.6.2'
@@ -59,3 +57,15 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Use Capistrano for deployment
+group :development do
+  gem 'capistrano', '~> 3.6.1'
+  gem 'capistrano-bundler', '~> 1.1.4'
+  gem 'capistrano-rails', '~> 1.1.8'
+
+  # Add this if you're using rbenv
+  gem 'capistrano-rbenv', '~> 2.0.4'
+  gem 'capistrano-safe-deploy-to', '~> 1.1.1'
+  gem 'capistrano3-puma', '~> 1.2'
+end
