@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-md-3 text-center">
+    <%= image_tag current_user.gravatar_url(size: 160), class: 'img-circle' %>
+    <div class="page-header">
+      <h3><%= current_user.username %></h3>
+    </div>
+    <ul class="list-group text-left text-muted">
+      <li class="list-group-item"><%= icon('map-marker', "校区") %></li>
+      <li class="list-group-item"><%= icon('envelope-o', current_user.email) %></li>
+      <li class="list-group-item"><%= icon('map-marker', "上海") %></li>
+    </ul>
+  </div>
+  <div class="col-md-9">
+    <% 30.times do %>
+    <div class="row">
+      <h4 class="text-muted">2016年复旦黑客马拉松</h4>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="media">
+            <div class="media-left media-middle">
+              <a href="#">
+              <img class="media-object" src="https://placeholdit.imgix.net/~text?txtsize=20&amp;txt=hackathon&amp;w=130&amp;h=130&amp;bg=fb9505&amp;txtclr=ffffff">
+              </a>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">基于 Leap Motion 的多人打架</h4>
+              <div class="media-heading"><span class="label label-info"><%= icon('map-marker', "上海") %></span> <span class="label label-info"><%= icon('map-marker', "上海") %></span></div>
+              <p>山川壯麗，物產豐隆，炎黃世胄，東亞稱雄。毋自暴自棄，毋故步自封，光我民族，促進大同。創業維艱，緬懷諸先烈；守成不易，莫徒務近功。同心同德，貫徹始終，青天白日滿地紅。同心同德，貫徹始終，青天白日滿地紅。</p>
+            </div>
+            <div class="media-right media-middle">
+              <button type="button" class="btn btn-danger btn-lg btn-block" style="width: 180px">DEMO</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

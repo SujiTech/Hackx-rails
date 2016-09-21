@@ -8,7 +8,9 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#"><%= image_tag "logo-white.png", width: '160px' %></a>
+      <%= link_to root_path, class: "navbar-brand" do %>
+        <%= image_tag "logo-white.png", width: '160px' %></a>
+      <% end %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -17,7 +19,7 @@
         <li><a href="#">创客马拉松</a></li>
         <li><a href="#">开放职位</a></li>
         <% if current_user %>
-          <li><a href="#"><%= current_user.username %></a></li>
+          <li><%= link_to current_user.username, users_path %></li>
           <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
         <% else %>
           <li><%= link_to "Log in", new_user_session_path %></li>
