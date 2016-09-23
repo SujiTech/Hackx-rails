@@ -23,6 +23,7 @@
 #  locked_at              :datetime
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  role                   :integer
 #
 # Indexes
 #
@@ -42,6 +43,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable,
          :omniauthable, :authentication_keys => [:login]
+
+  enum role: [:user, :admin]
+  after_initialize :set_default_role, :if => :new_record?
 
   has_many :authorizations, dependent: :delete_all
 
@@ -74,6 +78,10 @@ class User < ApplicationRecord
   end
 
   protected
+  def set_default_role
+    self.role ||= :user
+  end
+
   def confirmation_required?
     false
   end
