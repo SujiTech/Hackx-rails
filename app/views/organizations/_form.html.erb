@@ -1,0 +1,31 @@
+<%= form_for(organization) do |f| %>
+  <% if organization.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger" role="alert">
+      <h3><%= pluralize(organization.errors.count, "error") %> prohibited this organization from being saved:</h3>
+      <ul>
+      <% organization.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :description %>
+    <%= f.text_area :description, class: "form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :user_id, "Owner ID(User's id)" %>
+    <%= f.text_field :user_id, class: "form-control" %>
+  </div>
+  <hr>
+  <div class="actions">
+    <%= f.submit "创建", class: "btn btn-primary" %>
+  </div>
+<% end %>

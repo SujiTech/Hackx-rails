@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="page-header">
+    <div class='btn-toolbar pull-right'>
+      <div class='btn-group'>
+        <%= link_to 'Show', @organization, class: "btn btn-primary" %>
+        <%= link_to 'Back', organizations_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+    <h1>Editing Organization</h1>
+  </div>
+
+  <%= render 'form', organization: @organization %>
+</div>

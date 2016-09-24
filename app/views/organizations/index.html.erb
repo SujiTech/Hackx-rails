@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="page-header">
+    <div class='btn-toolbar pull-right'>
+      <div class='btn-group'>
+        <%= link_to 'New Organization', new_organization_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+    <h1>Organizations</h1>
+  </div>
+  <p id="notice"><%= notice %></p>
+
+  <% @organizations.each do |organization| %>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="media">
+          <div class="media-left media-middle">
+          </div>
+          <div class="media-body">
+            <h4 class="media-heading"><%= organization.name %></h4>
+            <p><%= organization.description %></p>
+          </div>
+          <div class="media-right media-middle">
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <%= will_paginate @organizations %>
+</div>

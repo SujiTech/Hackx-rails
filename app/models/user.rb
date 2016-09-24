@@ -48,6 +48,7 @@ class User < ApplicationRecord
   after_initialize :set_default_role, :if => :new_record?
 
   has_many :authorizations, dependent: :delete_all
+  has_many :organizations
 
   attr_accessor :login
   validate :validate_username
