@@ -11,7 +11,8 @@
       "moduleFiles": [
         "_components.scss",
         "_devise.scss",
-        "_social_signin_buttons.scss"
+        "_social_signin_buttons.scss",
+        "_ui.scss"
       ]
     }
   },
@@ -21,6 +22,11 @@
       "libs"
     ],
     "files": [
+      "attendees.scss",
+      "events.scss",
+      "organizations.scss",
+      "projects.scss",
+      "scaffolds.scss",
       "global/_base.scss",
       "global/_layout.scss",
       "global/_settings.scss",

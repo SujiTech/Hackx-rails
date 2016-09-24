@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="page-header">
+    <div class='btn-toolbar pull-right'>
+      <div class='btn-group'>
+      </div>
+    </div>
+    <h1>Hackathon</h1>
+  </div>
+
+  <% @events.each do |event| %>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="media">
+          <div class="media-left media-middle">
+          </div>
+          <div class="media-body">
+            <h4 class="media-heading"><%= event.title %></h4>
+            <p><%= event.description %></p>
+          </div>
+          <div class="media-right media-middle">
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <%= will_paginate @events %>
+</div>
