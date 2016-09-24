@@ -16,7 +16,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">创客马拉松</a></li>
+        <li><%= link_to "创客马拉松", events_path %></li>
         <li><a href="#">开放职位</a></li>
         <% if current_user %>
           <li><%= link_to current_user.username, users_path %></li>

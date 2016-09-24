@@ -1,0 +1,67 @@
+<%= form_for(attendee) do |f| %>
+  <% if attendee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(attendee.errors.count, "error") %> prohibited this attendee from being saved:</h2>
+
+      <ul>
+      <% attendee.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :gender %>
+    <%= f.number_field :gender %>
+  </div>
+
+  <div class="field">
+    <%= f.label :education %>
+    <%= f.number_field :education %>
+  </div>
+
+  <div class="field">
+    <%= f.label :graduation %>
+    <%= f.check_box :graduation %>
+  </div>
+
+  <div class="field">
+    <%= f.label :birthday %>
+    <%= f.date_select :birthday %>
+  </div>
+
+  <div class="field">
+    <%= f.label :school_name %>
+    <%= f.text_field :school_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone_number %>
+    <%= f.text_field :phone_number %>
+  </div>
+
+  <div class="field">
+    <%= f.label :github %>
+    <%= f.text_field :github %>
+  </div>
+
+  <div class="field">
+    <%= f.label :project_id %>
+    <%= f.text_field :project_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,2 @@
+json.extract! attendee, :id, :name, :gender, :education, :graduation, :birthday, :school_name, :email, :phone_number, :github, :project_id, :created_at, :updated_at
+json.url attendee_url(attendee, format: :json)

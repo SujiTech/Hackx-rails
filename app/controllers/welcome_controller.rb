@@ -1,7 +1,5 @@
 class WelcomeController < ApplicationController
   def index
-  end
-
-  def project
+    @events = Event.paginate(:page => params[:page])
   end
 end

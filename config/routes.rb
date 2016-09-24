@@ -3,9 +3,12 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :users, only: [:index]
+  resources :attendees
+  resources :projects
+  resources :events, except: [:new]
+  resources :organizations do
+    resources :events, only: [:new]
+  end
 
-  # TODO: Only for prototype
-  get 'prototype/homepage', to: 'welcome#index'
-  get 'prototype/project', to: 'welcome#project'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
